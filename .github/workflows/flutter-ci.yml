@@ -1,0 +1,91 @@
+name: Flutter CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+jobs:
+  test:
+    name: Test on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.24.0'
+        channel: 'stable'
+    
+    - name: Get dependencies
+      run: flutter pub get
+      working-directory: ./mobile_app
+    
+    - name: Verify formatting
+      run: dart format --output=none --set-exit-if-changed .
+      working-directory: ./mobile_app
+    
+    - name: Analyze project
+      run: flutter analyze
+      working-directory: ./mobile_app
+    
+    - name: Run tests
+      run: flutter test --coverage
+      working-directory: ./mobile_app
+    
+    - name: Upload coverage to Codecov
+      if: matrix.os == 'ubuntu-latest'
+      uses: codecov/codecov-action@v3
+      with:
+        file: ./mobile_app/coverage/lcov.info
+        flags: unittests
+        name: codecov-umbrella
+
+  build:
+    name: Build ${{ matrix.target }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: Android
+            os: ubuntu-latest
+            build-cmd: 'flutter build apk --release'
+          - target: iOS
+            os: macos-latest
+            build-cmd: 'flutter build ios --release --no-codesign'
+          - target: Windows
+            os: windows-latest
+            build-cmd: 'flutter build windows --release'
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup Flutter
+      uses: subosito/flutter-action@v2
+      with:
+        flutter-version: '3.24.0'
+        channel: 'stable'
+    
+    - name: Get dependencies
+      run: flutter pub get
+      working-directory: ./mobile_app
+    
+    - name: Build ${{ matrix.target }}
+      run: ${{ matrix.build-cmd }}
+      working-directory: ./mobile_app
+    
+    - name: Upload artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ matrix.target }}-build
+        path: |
+          mobile_app/build/app/outputs/
+          mobile_app/build/ios/
+          mobile_app/build/windows/

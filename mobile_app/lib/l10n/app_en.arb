@@ -1,0 +1,95 @@
+{
+  "@@locale": "en",
+  "appName": "Taabor",
+  "welcome": "Welcome",
+  "login": "Login",
+  "register": "Register",
+  "email": "Email",
+  "password": "Password",
+  "confirmPassword": "Confirm Password",
+  "name": "Name",
+  "phoneNumber": "Phone Number",
+  "signIn": "Sign In",
+  "signUp": "Sign Up",
+  "signOut": "Sign Out",
+  "forgotPassword": "Forgot Password?",
+  
+  "home": "Home",
+  "queue": "Queue",
+  "offers": "Offers",
+  "profile": "Profile",
+  "notifications": "Notifications",
+  
+  "businesses": "Businesses",
+  "nearby": "Nearby",
+  "search": "Search",
+  "filter": "Filter",
+  "sort": "Sort",
+  
+  "rating": "Rating",
+  "reviews": "Reviews",
+  "addReview": "Add Review",
+  "writeReview": "Write Your Review",
+  "yourRating": "Your Rating",
+  "submitReview": "Submit Review",
+  
+  "bookNow": "Book Now",
+  "myTickets": "My Tickets",
+  "ticketNumber": "Ticket Number",
+  "queueStatus": "Queue Status",
+  "waitingTime": "Waiting Time",
+  "peopleAhead": "People Ahead",
+  
+  "settings": "Settings",
+  "language": "Language",
+  "arabic": "Arabic",
+  "english": "English",
+  "kurdish": "Kurdish",
+  
+  "darkMode": "Dark Mode",
+  "lightMode": "Light Mode",
+  
+  "save": "Save",
+  "cancel": "Cancel",
+  "delete": "Delete",
+  "edit": "Edit",
+  "update": "Update",
+  "confirm": "Confirm",
+  
+  "loading": "Loading...",
+  "error": "Error",
+  "success": "Success",
+  "retry": "Retry",
+  
+  "noResults": "No Results",
+  "noNotifications": "No Notifications",
+  "noReviews": "No Reviews",
+  
+  "markAllAsRead": "Mark All As Read",
+  "helpful": "Helpful",
+  "notHelpful": "Not Helpful",
+  
+  "loyalty": "Loyalty",
+  "points": "Points",
+  "rewards": "Rewards",
+  "myPoints": "My Points",
+  "redeemPoints": "Redeem Points",
+  
+  "bronze": "Bronze",
+  "silver": "Silver",
+  "gold": "Gold",
+  
+  "security": "Security",
+  "twoFactorAuth": "Two-Factor Authentication",
+  "verifyEmail": "Verify Email",
+  "verifyPhone": "Verify Phone",
+  
+  "merchantDashboard": "Merchant Dashboard",
+  "analytics": "Analytics",
+  "todayBookings": "Today's Bookings",
+  "totalRevenue": "Total Revenue",
+  
+  "map": "Map",
+  "navigate": "Navigate",
+  "distance": "Distance"
+}

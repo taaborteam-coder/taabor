@@ -1,0 +1,96 @@
+{
+  "@@locale": "ar",
+  "appName": "طابور",
+  "welcome": "مرحباً",
+  "login": "تسجيل الدخول",
+  "register": "إنشاء حساب",
+  "email": "البريد الإلكتروني",
+  "password": "كلمة المرور",
+  "confirmPassword": "تأكيد كلمة المرور",
+  "name": "الاسم",
+  "phoneNumber": "رقم الهاتف",
+  "signIn": "دخول",
+  "signUp": "تسجيل",
+  "signOut": "تسجيل الخروج",
+  "forgotPassword": "نسيت كلمة المرور؟",
+  
+  "home": "الرئيسية",
+  "queue": "الطابور",
+  "offers": "العروض",
+  "profile": "الحساب",
+  "notifications": "الإشعارات",
+  
+  "businesses": "الأعمال",
+  "nearby": "بالقرب",
+  "search": "بحث",
+  "filter": "تصفية",
+  "sort": "ترتيب",
+  
+  "rating": "التقييم",
+  "reviews": "المراجعات",
+  "addReview": "إضافة مراجعة",
+  "writeReview": "اكتب مراجعتك",
+  "yourRating": "تقييمك",
+  "submitReview": "إرسال المراجعة",
+  
+  "bookNow": "احجز الآن",
+  "myTickets": "تذاكري",
+  "ticketNumber": "رقم التذكرة",
+  
+ "queueStatus": "حالة الطابور",
+  "waitingTime": "وقت الانتظار",
+  "peopleAhead": "شخص أمامك",
+  
+  "settings": "الإعدادات",
+  "language": "اللغة",
+  "arabic": "العربية",
+  "english": "الإنجليزية",
+  "kurdish": "الكوردية",
+  
+  "darkMode": "الوضع الليلي",
+  "lightMode": "الوضع النهاري",
+  
+  "save": "حفظ",
+  "cancel": "إلغاء",
+  "delete": "حذف",
+  "edit": "تعديل",
+  "update": "تحديث",
+  "confirm": "تأكيد",
+  
+  "loading": "جار التحميل...",
+  "error": "خطأ",
+  "success": "تم بنجاح",
+  "retry": "إعادة المحاولة",
+  
+  "noResults": "لا توجد نتائج",
+  "noNotifications": "لا توجد إشعارات",
+  "noReviews": "لا توجد مراجعات",
+  
+  "markAllAsRead": "تعليم الكل كمقروء",
+  "helpful": "مفيدة",
+  "notHelpful": "غير مفيدة",
+  
+  "loyalty": "الولاء",
+  "points": "النقاط",
+  "rewards": "المكافآت",
+  "myPoints": "نقاطي",
+  "redeemPoints": "استبدال النقاط",
+  
+  "bronze": "برونزي",
+  "silver": "فضي",
+  "gold": "ذهبي",
+  
+  "security": "الأمان",
+  "twoFactorAuth": "التحقق بخطوتين",
+  "verifyEmail": "التحقق من البريد",
+  "verifyPhone": "التحقق من الهاتف",
+  
+  "merchantDashboard": "لوحة التاجر",
+  "analytics": "الإحصائيات",
+  "todayBookings": "حجوزات اليوم",
+  "totalRevenue": "الإيرادات الكلية",
+  
+  "map": "الخريطة",
+  "navigate": "التوجيه",
+  "distance": "المسافة"
+}

@@ -1,0 +1,95 @@
+{
+  "@@locale": "ku",
+  "appName": "تاابۆر",
+  "welcome": "بەخێربێیت",
+  "login": "چوونەژوورەوە",
+  "register": "خۆتۆمارکردن",
+  "email": "ئیمەیڵ",
+  "password": "وشەی نهێنی",
+  "confirmPassword": "پشتڕاستکردنەوەی وشەی نهێنی",
+  "name": "ناو",
+  "phoneNumber": "ژمارەی تەلەفۆن",
+  "signIn": "چوونەژوورەوە",
+  "signUp": "تۆمارکردن",
+  "signOut": "چوونەدەرەوە",
+  "forgotPassword": "وشەی نهێنیت لەبیرکردووە؟",
+  
+  "home": "سەرەکی",
+  "queue": "ڕیز",
+  "offers": "پێشکەشکراوەکان",
+  "profile": "پرۆفایل",
+  "notifications": "ئاگادارکردنەوەکان",
+  
+  "businesses": "کارە کان",
+  "nearby": "نزیک",
+  "search": "گەڕان",
+  "filter": "پاڵاوتن",
+  "sort": "ڕیزکردن",
+  
+  "rating": "هەڵسەنگاندن",
+  "reviews": "پێداچوونەوەکان",
+  "addReview": "زیادکردنی پێداچوونەوە",
+  "writeReview": "پێداچوونەوەکەت بنووسە",
+  "yourRating": "هەڵسەنگاندنی تۆ",
+  "submitReview": "ناردنی پێداچوونەوە",
+  
+  "bookNow": "ئێستا حجز بکە",
+  "myTickets": "بلیتەکانم",
+  "ticketNumber": "ژمارەی بلیت",
+  "queueStatus": "دۆخی ڕیز",
+  "waitingTime": "کاتی چاوەڕوانی",
+  "peopleAhead": "کەس لەپێشتدایە",
+  
+  "settings": "ڕێکخستنەکان",
+  "language": "زمان",
+  "arabic": "عەرەبی",
+  "english": "ئینگلیزی",
+  "kurdish": "کوردی",
+  
+  "darkMode": "شێوازی تاریک",
+  "lightMode": "شێوازی ڕووناک",
+  
+  "save": "پاشەکەوتکردن",
+  "cancel": "هەڵوەشاندنەوە",
+  "delete": "سڕینەوە",
+  "edit": "دەستکاریکردن",
+  "update": "نوێکردنەوە",
+  "confirm": "پشتڕاستکردنەوە",
+  
+  "loading": "بارکردن...",
+  "error": "هەڵە",
+  "success": "سەرکەوتوو بوو",
+  "retry": "هەوڵدانەوە",
+  
+  "noResults": "هیچ ئەنجامێک نییە",
+  "noNotifications": "هیچ ئاگادارکردنەوەیەک نییە",
+  "noReviews": "هیچ پێداچوونەوەیەک نییە",
+  
+  "markAllAsRead": "هەمووی وەک خوێندراوە نیشانبکە",
+  "helpful": "سوودبەخش",
+  "notHelpful": "سوودبەخش نییە",
+  
+  "loyalty": "دڵسۆزی",
+  "points": "خاڵەکان",
+  "rewards": "خەڵاتەکان",
+  "myPoints": "خاڵەکانم",
+  "redeemPoints": "بەکارهێنانی خاڵەکان",
+  
+  "bronze": "برۆنز",
+  "silver": "زیو",
+  "gold": "زێڕ",
+  
+  "security": "ئاسایش",
+  "twoFactorAuth": "پشتڕاستکردنەوە بە دوو هەنگاو",
+  "verifyEmail": "پشتڕاستکردنەوەی ئیمەیڵ",
+  "verifyPhone": "پشتڕاستکردنەوەی تەلەفۆن",
+  
+  "merchantDashboard": "داشبۆردی بازرگان",
+  "analytics": "ئامارەکان",
+  "todayBookings": "حجزەکانی ئەمڕۆ",
+  "totalRevenue": "کۆی داهات",
+  
+  "map": "نەخشە",
+  "navigate": "ڕێنیشاندەر",
+  "distance": "مەودا"
+}

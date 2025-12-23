@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "332519555718",
+    "project_id": "taabor-mobile-app",
+    "storage_bucket": "taabor-mobile-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:332519555718:android:3b4999dd4cee536c5c4707",
+        "android_client_info": {
+          "package_name": "com.example.mobile_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmbaJ-8p6zuIvHmmoWVnkRM-QFajNydKU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

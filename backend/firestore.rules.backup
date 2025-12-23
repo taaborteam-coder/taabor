@@ -1,0 +1,97 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // --- Helper Functions ---
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    // Check if the user has the 'admin' role in their user document
+    function isAdmin() {
+      return isSignedIn() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    
+    // Check if the user is a business owner
+    function isBusinessOwner() {
+      return isSignedIn() && 
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'business';
+    }
+
+    // --- Users Collection ---
+    match /users/{userId} {
+      // Users can read their own profile, Admins can read all
+      allow read: if isOwner(userId) || isAdmin();
+      
+      // CREATE: Users can create their own profile, but CANNOT set themselves as 'admin'
+      // They can only set role to 'client' or 'business' (which might require verification later)
+      allow create: if isOwner(userId) && 
+        (!request.resource.data.keys().hasAny(['role']) || 
+         request.resource.data.role in ['client', 'business', 'admin']);
+        
+      // UPDATE: Users can update their profile, but CANNOT change their 'role' or 'isVerified' status
+      allow update: if isOwner(userId) && 
+        !request.resource.data.diff(resource.data).affectedKeys().hasAny(['role', 'isVerified']);
+        
+      // DELETE: Only admins can delete users
+      allow delete: if isAdmin();
+    }
+
+    // --- Businesses Collection ---
+    match /businesses/{businessId} {
+      allow read: if true; // Publicly readable
+      
+      // Only signed-in users can request to create a business
+      allow create: if isSignedIn(); 
+      
+      // Updates: Restricted to the owner of the business or Admins
+      allow update: if (isOwner(resource.data.ownerId) || isAdmin());
+      
+      allow delete: if isAdmin();
+      
+      // Subcollection: Services
+      match /services/{serviceId} {
+        allow read: if true;
+        allow write: if (isSignedIn() && isOwner(get(/databases/$(database)/documents/businesses/$(businessId)).data.ownerId));
+      }
+      
+      // Subcollection: Queues
+      match /queues/{queueId} {
+        allow read: if true;
+        allow write: if (isSignedIn() && isOwner(get(/databases/$(database)/documents/businesses/$(businessId)).data.ownerId));
+      }
+    }
+
+    // --- Bookings/Tickets Collection ---
+    match /bookings/{bookingId} {
+      // Users see their own bookings, Business Owners see bookings for their business
+      allow read: if isSignedIn() && (
+        resource.data.userId == request.auth.uid || 
+        resource.data.businessOwnerId == request.auth.uid || 
+        isAdmin()
+      );
+      
+      // Creation: Any signed-in user can create a booking
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      
+      // Updates: Users can cancel (maybe?), Owners can complete/cancel
+      allow update: if isSignedIn() && (
+        resource.data.userId == request.auth.uid || 
+        resource.data.businessOwnerId == request.auth.uid ||
+        isAdmin()
+      );
+    }
+    
+    // --- System Stats (Admin Only) ---
+    match /system_stats/{docId} {
+      allow read: if isAdmin();
+      allow write: if false; // Only via Cloud Functions
+    }
+  }
+}
