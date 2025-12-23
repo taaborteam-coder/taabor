@@ -12,6 +12,7 @@ class TicketModel extends Ticket {
     required super.type,
     required super.createdAt,
     super.estimatedTime,
+    super.isLamassuVerified = false,
   });
 
   factory TicketModel.fromFirestore(DocumentSnapshot doc) {
@@ -32,6 +33,7 @@ class TicketModel extends Ticket {
       ),
       createdAt: (data['createdAt'] as Timestamp?)?.toDate() ?? DateTime.now(),
       estimatedTime: (data['estimatedTime'] as Timestamp?)?.toDate(),
+      isLamassuVerified: data['isLamassuVerified'] ?? false,
     );
   }
 
@@ -45,6 +47,7 @@ class TicketModel extends Ticket {
       'type': type.name,
       'createdAt': createdAt,
       'estimatedTime': estimatedTime,
+      'isLamassuVerified': isLamassuVerified,
     };
   }
 
@@ -59,6 +62,7 @@ class TicketModel extends Ticket {
       'type': type.name,
       'createdAt': createdAt.toIso8601String(),
       'estimatedTime': estimatedTime?.toIso8601String(),
+      'isLamassuVerified': isLamassuVerified,
     };
   }
 
@@ -81,6 +85,7 @@ class TicketModel extends Ticket {
       estimatedTime: json['estimatedTime'] != null
           ? DateTime.parse(json['estimatedTime'])
           : null,
+      isLamassuVerified: json['isLamassuVerified'] ?? false,
     );
   }
 }
