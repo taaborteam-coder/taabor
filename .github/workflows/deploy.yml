@@ -185,3 +185,33 @@ jobs:
           args: deploy --only functions
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
+  deploy-admin-panel:
+    name: Deploy Admin Panel
+    needs: test
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: admin_panel/package-lock.json
+
+      - name: Install Dependencies
+        run: npm ci
+        working-directory: ./admin_panel
+
+      - name: Build Admin Panel
+        run: npm run build
+        working-directory: ./admin_panel
+      
+      - name: Deploy Hosting
+        uses: w9jds/firebase-action@master
+        with:
+          args: deploy --only hosting
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
