@@ -37,6 +37,7 @@ void main() {
           'type': 'regular',
           'createdAt': '2024-01-01T12:00:00.000Z',
           'estimatedTime': '2024-01-01T12:30:00.000Z',
+          'isLamassuVerified': false,
         };
         expect(result, expectedMap);
       });
@@ -55,6 +56,7 @@ void main() {
           'type': 'regular',
           'createdAt': '2024-01-01T12:00:00.000Z',
           'estimatedTime': '2024-01-01T12:30:00.000Z',
+          'isLamassuVerified': false,
         };
 
         // Act

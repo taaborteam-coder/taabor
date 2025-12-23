@@ -60,7 +60,7 @@ void main() {
       return authBloc;
     },
     act: (bloc) => bloc.add(AuthCheckRequested()),
-    expect: () => [isA<AuthAuthenticated>()],
+    expect: () => [AuthLoading(), const AuthAuthenticated(tUser)],
   );
 
   blocTest<AuthBloc, AuthState>(
@@ -72,6 +72,6 @@ void main() {
       return authBloc;
     },
     act: (bloc) => bloc.add(AuthCheckRequested()),
-    expect: () => [isA<AuthUnauthenticated>()],
+    expect: () => [AuthLoading(), AuthUnauthenticated()],
   );
 }
